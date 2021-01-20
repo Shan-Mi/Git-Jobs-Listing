@@ -1,7 +1,7 @@
 # Good to know
 
 - API url: `https://jobs.github.com/positions.json?description=javascript`
-
+- new url: `https://us-central1-wands-2017.cloudfunctions.net/githubjobs`
 **Data structure for one job**
 ```json
 {
@@ -22,7 +22,7 @@
 # Requirement
 
 1. First Page
-  - 2 inputs + 1 button: 
+  - 1 inputs + 1 button: 
 
     `description` | `whatever you input` | `Button`
 
@@ -60,3 +60,6 @@
 ## Dependencies
 
 axios | styled-components (maybe change it into emotion later...)
+
+enzyme | @wojtekmaj/enzyme-adapter-react-17
+
