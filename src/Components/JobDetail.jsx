@@ -30,8 +30,7 @@ const JobDetail = ({ job }) => {
     company_logo,
   } = job;
 
-  const createDescription = () => ({ __html: description });
-  const createHowToApply = () => ({ __html: how_to_apply });
+  const createContent = (content) => ({ __html: content });
 
   return (
     <DetailWrapper id="job-detail">
@@ -52,11 +51,11 @@ const JobDetail = ({ job }) => {
       </FlexWrapper>
       <div
         className="description"
-        dangerouslySetInnerHTML={createDescription()}
+        dangerouslySetInnerHTML={createContent(description)}
       />
       <div
         className="how-to-apply"
-        dangerouslySetInnerHTML={createHowToApply()}
+        dangerouslySetInnerHTML={createContent(how_to_apply)}
       />
     </DetailWrapper>
   );
