@@ -1,5 +1,6 @@
 # Good to know
 
+[online demo - firebase](https://gitjoblist-shan.web.app/)
 ## RUN the test
 `yarn test ./src/Components/__test__/JobDetail.test.js` : for **JobDetail component**
 
