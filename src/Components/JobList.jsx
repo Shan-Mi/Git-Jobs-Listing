@@ -1,14 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import JobListItem from "./JobListItem";
 
-const JobList = ({url, job}) => {
-  return (
-    <div>
-      <Link to={`${url}/${job.id}`} key={job.id}>
-        {job.title}
-      </Link>
+const JobList = ({ currentJobs, url }) =>
+  currentJobs.map((job) => (
+    <div key={job.id}>
+      <JobListItem url={url} job={job} />
     </div>
-  );
-};
+  ));
 
 export default JobList;
