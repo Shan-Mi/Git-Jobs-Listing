@@ -1,33 +1,22 @@
 import React, { useContext } from "react";
 import { useParams, useHistory } from "react-router-dom";
+import JobDetail from "../Components/JobDetail";
 import { UserContext } from "../context/GlobalContext";
 import { getOneJob } from "../utilis/helper";
 
 // import WithHeader from "../Components/WithHeader";
 
 const JobDetailPage = () => {
-  const { jobs, setJobs} = useContext(UserContext);
+  const { jobs } = useContext(UserContext);
 
   let { jobtitle, id } = useParams();
   const history = useHistory();
-  const [
-    {
-      url,
-      created_at,
-      type,
-      company,
-      company_url,
-      location,
-      title,
-      description,
-      how_to_apply,
-      company_logo,
-    },
-  ] = getOneJob(jobtitle, id, jobs);
+  const [job] = getOneJob(jobtitle, id, jobs);
 
   return (
     <div>
-      {jobtitle}: {id}
+      <h1>Job Title: {jobtitle}</h1>
+      <JobDetail job={job} />
       <button onClick={history.goBack}>Go back</button>
     </div>
   );
