@@ -31,8 +31,6 @@
   - for input data search pattern:
     - use SPACEBAR as `+`: 
 
-    TODO: need to split and join string
-
   - Searching results:
 
     1) If result is empty -> **expect this**: `No jobs found` should be shown as a result
@@ -45,12 +43,12 @@
     - `type` value: wrapped in `strong-element`
     - `title` value: wrapped in a `h2`
     - `company_url` value: wrapped in `a`
-    - `description` value: wrapped in `p`
+    - `description` value: wrapped in `p` -> `div`
     - `company_logo` value: as `src` for a `img` element
 
   - TIPS:
 
-    Use `pleaseusedangerouslySetInnerHTML` for description
+    Use `dangerouslySetInnerHTML` for description
 
 3. Save results(if there is any) in context to avoid multiple fetching data.
 
@@ -66,7 +64,7 @@ enzyme | @wojtekmaj/enzyme-adapter-react-17
 - react-loadingg
 
   - usage: 
-  ```
+  ```js
   import { BoxLoading } from 'react-loadingg';
   // or
   import BoxLoading from 'react-loadingg/lib/BoxLoading
