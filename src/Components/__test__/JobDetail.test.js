@@ -1,5 +1,5 @@
 import React from "react";
-import {  shallow } from "enzyme";
+import { shallow } from "enzyme";
 import JobDetail from "../JobDetail";
 import { JOB_OBJECT } from "../../Constants/variables";
 
@@ -21,7 +21,7 @@ describe("Test for JobDetail component", () => {
     ).toBeTruthy();
   });
 
-  it.only("should contain text 'Origin Link' with correct url for this job", () => {
+  it("should contain text 'Origin Link' with correct url for this job", () => {
     // find correct node by expected content;
     // then check if it is an a-element;
     // then check if it has the correct href;
