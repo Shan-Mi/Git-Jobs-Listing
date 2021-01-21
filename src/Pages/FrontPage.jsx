@@ -4,13 +4,12 @@ import { getJobs } from "../Api";
 import WithHeader from "../Components/WithHeader";
 import { UserContext } from "../context/GlobalContext";
 import EatLoading from "react-loadingg/lib/EatLoading";
+import { NO_JOBS_FOUND } from "../Constants/variables";
 
 const FrontPage = () => {
   const descRef = useRef();
   const { jobs, setJobs } = useContext(UserContext);
-
   const [isLoading, setIsLoading] = useState(false);
-
   const history = useHistory();
 
   const generateKeywords = (val) => {
@@ -30,6 +29,11 @@ const FrontPage = () => {
     }
 
     const newJobs = await getJobs(generatedKeywords);
+    if (newJobs === NO_JOBS_FOUND) {
+      console.log("no results, should be...");
+      history.push("/nojobfound");
+      return;
+    }
     setJobs({ ...jobs, [generatedKeywords]: newJobs });
     setIsLoading(false);
     history.push(`/jobs/${generatedKeywords}`);

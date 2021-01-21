@@ -19,7 +19,6 @@ const App = () => {
           </div>
         )}
       />
-
       <Route path="/nojobfound" component={NoJobFound} />
       <Route path="*" component={Page404} />
     </Switch>

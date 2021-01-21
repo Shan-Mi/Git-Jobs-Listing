@@ -8,14 +8,14 @@ import { getOneJob } from "../utilis/helper";
 
 const JobDetailPage = () => {
   const { jobs } = useContext(UserContext);
-
-  let { jobtitle, id } = useParams();
+  const { jobtitle, id } = useParams();
   const history = useHistory();
   const [job] = getOneJob(jobtitle, id, jobs);
 
   return (
     <div>
-      <h1>Job Title: {jobtitle}</h1>
+      <h1>Job Type: {jobtitle}</h1>
+      <button onClick={history.goBack}>Go back</button>
       <JobDetail job={job} />
       <button onClick={history.goBack}>Go back</button>
     </div>
