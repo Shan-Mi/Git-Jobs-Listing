@@ -5,17 +5,14 @@ import WithHeader from "../Components/WithHeader";
 import { UserContext } from "../context/GlobalContext";
 import EatLoading from "react-loadingg/lib/EatLoading";
 import { NO_JOBS_FOUND } from "../Constants/variables";
+import { generateKeywords } from "../utilis/helper";
+import SearchingForm from "../Components/SearchingForm";
 
 const FrontPage = () => {
   const descRef = useRef();
   const { jobs, setJobs } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
-
-  const generateKeywords = (val) => {
-    const regex = /\s+/;
-    return val.trim().split(regex).join("+");
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -38,18 +35,11 @@ const FrontPage = () => {
     history.push(`/jobs/${generatedKeywords}`);
   };
 
-  const SearchingForm = () => (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="descption">Use SPACE to input multiple keywords</label>
-      <br />
-      <input id="descption" ref={descRef} placeholder="Job description..." />
-      <button id='search'>Search</button>
-    </form>
-  );
-
   return (
     <div>
-      {!isLoading && <SearchingForm />}
+      {!isLoading && (
+        <SearchingForm handleSubmit={handleSubmit} descRef={descRef} />
+      )}
       {isLoading && <EatLoading />}
     </div>
   );

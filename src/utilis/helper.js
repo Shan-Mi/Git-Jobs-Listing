@@ -2,4 +2,8 @@
 export const getOneJob = (jobtitle, id, jobs) =>
   jobs[jobtitle].filter((job) => job.id === id);
 
+export const generateKeywords = (val) => {
+  const regex = /\s+/;
+  return val.trim().split(regex).join("+");
+};
 // TODO: store search result in localstorage
