@@ -6,7 +6,7 @@ import { getOneJob } from "../utilis/helper";
 // import WithHeader from "../Components/WithHeader";
 
 const JobDetailPage = () => {
-  const { jobs, setJobs, isLoading, setIsLoading } = useContext(UserContext);
+  const { jobs, setJobs} = useContext(UserContext);
 
   let { jobtitle, id } = useParams();
   const history = useHistory();

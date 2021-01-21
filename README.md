@@ -63,3 +63,13 @@ axios | styled-components (maybe change it into emotion later...)
 
 enzyme | @wojtekmaj/enzyme-adapter-react-17
 
+- react-loadingg
+
+  - usage: 
+  ```
+  import { BoxLoading } from 'react-loadingg';
+  // or
+  import BoxLoading from 'react-loadingg/lib/BoxLoading
+
+  <BoxLoading />;
+  ```

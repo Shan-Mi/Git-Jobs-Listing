@@ -1,12 +1,15 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 import { getJobs } from "../Api";
 import WithHeader from "../Components/WithHeader";
 import { UserContext } from "../context/GlobalContext";
+import EatLoading from "react-loadingg/lib/EatLoading";
 
 const FrontPage = () => {
   const descRef = useRef();
-  const { jobs, setJobs, isLoading, setIsLoading } = useContext(UserContext);
+  const { jobs, setJobs } = useContext(UserContext);
+
+  const [isLoading, setIsLoading] = useState(false);
 
   const history = useHistory();
 
@@ -17,6 +20,7 @@ const FrontPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const originalKeywords = descRef.current.value;
     const generatedKeywords = generateKeywords(originalKeywords);
 
@@ -31,14 +35,19 @@ const FrontPage = () => {
     history.push(`/jobs/${generatedKeywords}`);
   };
 
+  const SearchingForm = () => (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="descption">Use SPACE to input multiple keywords</label>
+      <br />
+      <input id="descption" ref={descRef} placeholder="Job description..." />
+      <button>Search</button>
+    </form>
+  );
+
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="descption">Use SPACE to input multiple keywords</label>
-        <br />
-        <input id="descption" ref={descRef} placeholder="Job description..." />
-        <button>Search</button>
-      </form>
+      {!isLoading && <SearchingForm />}
+      {isLoading && <EatLoading />}
     </div>
   );
 };
