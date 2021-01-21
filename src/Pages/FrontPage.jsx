@@ -43,7 +43,7 @@ const FrontPage = () => {
       <label htmlFor="descption">Use SPACE to input multiple keywords</label>
       <br />
       <input id="descption" ref={descRef} placeholder="Job description..." />
-      <button>Search</button>
+      <button id='search'>Search</button>
     </form>
   );
 
