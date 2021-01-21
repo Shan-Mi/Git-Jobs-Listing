@@ -1,6 +1,8 @@
 # Good to know
 
 [online demo - firebase](https://gitjoblist-shan.web.app/)
+
+[online demo - netlify](https://gitjoblist-shan.netlify.app/)
 ## RUN the test
 `yarn test ./src/Components/__test__/JobDetail.test.js` : for **JobDetail component**
 
