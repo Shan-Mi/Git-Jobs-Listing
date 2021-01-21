@@ -30,7 +30,6 @@ const FrontPage = () => {
 
     const newJobs = await getJobs(generatedKeywords);
     if (newJobs === NO_JOBS_FOUND) {
-      console.log("no results, should be...");
       history.push("/nojobfound");
       return;
     }
