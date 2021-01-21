@@ -14,6 +14,7 @@ const TitleWrapper = styled.div`
   top: 0;
   background-color: #93bdec;
   padding-bottom: 1rem;
+  z-index: 10;
 
   h1 {
     text-transform: uppercase;

@@ -20,6 +20,7 @@ const TitleWrapper = styled.div`
   position: sticky;
   top: 0;
   background-color: #93bdec;
+  z-index: 10;
   padding-bottom: 1rem;
 `;
 
