@@ -3,6 +3,8 @@
 [online demo - firebase](https://gitjoblist-shan.web.app/)
 
 [online demo - netlify](https://gitjoblist-shan.netlify.app/)
+
+[online demo - vercel](https://gitjoblist-shan.vercel.app/)
 ## RUN the test
 `yarn test ./src/Components/__test__/JobDetail.test.js` : for **JobDetail component**
 
