@@ -8,6 +8,10 @@ const FormWrapper = styled.form`
   padding: 5vh 5vw;
   border-radius: 10px;
   background-color: cadetblue;
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  transform: translateX(-50%);
 
   div {
     display: flex;

@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 const TitleWrapper = styled.h1`
   text-align: center;
+  position: relative;
+  top: 5rem;
 `;
 
 const Header = () => {

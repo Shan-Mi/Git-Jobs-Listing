@@ -4,6 +4,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Lato', sans-serif;
     background: rgb(80,126,177);
+    background: #93bdec;
   }
   h1 {
     margin: 0;

@@ -19,7 +19,7 @@ const TitleWrapper = styled.div`
   margin: 3rem 1rem 2rem;
   position: sticky;
   top: 0;
-  background-color: rgb(80, 126, 177);
+  background-color: #93bdec;
   padding-bottom: 1rem;
 `;
 
