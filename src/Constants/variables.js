@@ -1,0 +1,1 @@
+export const NO_JOBS_FOUND = 'No jobs found'
