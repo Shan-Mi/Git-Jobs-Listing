@@ -1,5 +1,7 @@
 import React from "react";
 import Header from "./Header";
+import styled from "styled-components";
+
 
 const getDisplayName = (Wrappedcomponent) => {
   return Wrappedcomponent.displayName || Wrappedcomponent.name || "component";

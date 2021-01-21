@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const JobListItem = ({ url, job }) => {
+const JobListItem = ({ url, job, index }) => {
   return (
-    <div>
-      <Link to={`${url}/${job.id}`} key={job.id}>
-        {job.title}
-      </Link>
-    </div>
+    <Link to={`${url}/${job.id}`} key={job.id}>
+      - {index}: {job.title}
+    </Link>
   );
 };
 
