@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import { BrowserRouter, Link } from "react-router-dom";
-import GlobalContext from "../../context/GlobalContext";
+// import GlobalContext from "../../context/GlobalContext";
 import { JOB_OBJECT, URL } from "../../Constants/variables";
 import JobListItem from "../JobListItem";
 
@@ -10,9 +10,7 @@ describe("Test for JobListItem component", () => {
   beforeEach(() => {
     JobListItemWrapper = mount(
       <BrowserRouter>
-        <GlobalContext>
-          <JobListItem job={JOB_OBJECT} url={URL} />
-        </GlobalContext>
+        <JobListItem job={JOB_OBJECT} url={URL} />
       </BrowserRouter>
     );
   });
@@ -27,6 +25,8 @@ describe("Test for JobListItem component", () => {
   });
 
   it("should render correct job title", () => {
-    expect(JobListItemWrapper.find(Link).text()).toBe(JOB_OBJECT.title);
+    expect(JobListItemWrapper.find(Link).text()).toBe(
+      `- : ${JOB_OBJECT.title}`
+    );
   });
 });

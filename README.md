@@ -3,7 +3,7 @@
 ## RUN the test
 `yarn test ./src/Components/__test__/JobDetail.test.js` : for **JobDetail component**
 
-`yarn test ./src/Components/__test__/JobList.test.js`: for **JobList component**
+`yarn test ./src/Components/__test__/JobListItem.test.js`: for **JobListItem component**
 
 - API url: `https://jobs.github.com/positions.json?description=javascript`
 - new url: `https://us-central1-wands-2017.cloudfunctions.net/githubjobs`
