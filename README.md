@@ -1,5 +1,10 @@
 # Good to know
 
+## RUN the test
+`yarn test ./src/Components/__test__/JobDetail.test.js` : for **JobDetail component**
+
+`yarn test ./src/Components/__test__/JobList.test.js`: for **JobList component**
+
 - API url: `https://jobs.github.com/positions.json?description=javascript`
 - new url: `https://us-central1-wands-2017.cloudfunctions.net/githubjobs`
 **Data structure for one job**
