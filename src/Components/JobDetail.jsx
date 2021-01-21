@@ -23,8 +23,8 @@ const JobDetail = ({ job }) => {
       <a href={url} target="_blank" rel="noreferrer">
         Original Link
       </a>
-      ,<p>Created At: {created_at}</p>
-      <p>Type: {type}</p>
+      <p>Created At: {created_at}</p>
+      <strong>Type: {type}</strong>
       <p>Company: {company}</p>
       <a href={company_url}>{company_url}</a>
       <p>Location: {location}</p>
