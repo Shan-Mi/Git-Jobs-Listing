@@ -45,10 +45,10 @@ const JobDetail = ({ job }) => {
         <a href={company_url} className="company-url">
           {company_url}
         </a>
-
         <p className="location">Location: {location}</p>
         <img src={company_logo} alt={company} />
       </FlexWrapper>
+
       <div
         className="description"
         dangerouslySetInnerHTML={createContent(description)}

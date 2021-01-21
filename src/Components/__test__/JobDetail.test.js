@@ -1,7 +1,5 @@
 import React from "react";
-import { mount } from "enzyme";
-import { BrowserRouter } from "react-router-dom";
-import GlobalContext from "../../context/GlobalContext";
+import {  shallow } from "enzyme";
 import JobDetail from "../JobDetail";
 import { JOB_OBJECT } from "../../Constants/variables";
 
@@ -9,13 +7,7 @@ describe("Test for JobDetail component", () => {
   let JobWrapper;
 
   beforeEach(() => {
-    JobWrapper = mount(
-      <BrowserRouter>
-        <GlobalContext>
-          <JobDetail job={JOB_OBJECT} />
-        </GlobalContext>
-      </BrowserRouter>
-    );
+    JobWrapper = shallow(<JobDetail job={JOB_OBJECT} />);
   });
 
   it("should render component", () => {
@@ -29,12 +21,20 @@ describe("Test for JobDetail component", () => {
     ).toBeTruthy();
   });
 
-  it("should contain origin link for this job", () => {
-    expect(JobWrapper.find("a").at(0).prop("href")).toEqual(JOB_OBJECT.url);
+  it.only("should contain text 'Origin Link' with correct url for this job", () => {
+    // find correct node by expected content;
+    // then check if it is an a-element;
+    // then check if it has the correct href;
+    // the result has two children, we need the first one - a-tag
+    expect(
+      JobWrapper.findWhere((n) => n.text() === "Original Link")
+        .at(0)
+        .prop("href")
+    ).toEqual(JOB_OBJECT.url);
   });
 
   it(`'company_url' should be wrapped in an a-tag`, () => {
-    expect(JobWrapper.find("a").at(1).hasClass("company-url")).toBeTruthy();
+    expect(JobWrapper.find(".company-url").closest("a")).toHaveLength(1);
   });
 
   it(`'company_url' should be able to link to correct url`, () => {
@@ -52,9 +52,7 @@ describe("Test for JobDetail component", () => {
   });
 
   it("description should be wrapped in its own div", () => {
-    expect(
-      JobWrapper.find("div div").at(0).hasClass("description")
-    ).toBeTruthy();
+    expect(JobWrapper.find(".description").closest("div")).toHaveLength(1);
   });
 
   it("company logo should be wrapped in an img-tag", () => {
