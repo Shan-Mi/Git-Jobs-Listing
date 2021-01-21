@@ -1,11 +1,15 @@
 import React, { useContext, useRef } from "react";
+import { useHistory } from "react-router-dom";
 import { getJobs } from "../Api";
 import WithHeader from "../Components/WithHeader";
 import { UserContext } from "../context/GlobalContext";
 
 const FrontPage = () => {
   const descRef = useRef();
-  const { jobs, setJobs } = useContext(UserContext);
+  const { jobs, setJobs, isLoading, setIsLoading } = useContext(UserContext);
+
+  const history = useHistory();
+
   const generateKeywords = (val) => {
     const regex = /\s+/;
     return val.trim().split(regex).join("+");
@@ -17,11 +21,14 @@ const FrontPage = () => {
     const generatedKeywords = generateKeywords(originalKeywords);
 
     if (Object.keys(jobs).includes(generatedKeywords)) {
-      return jobs[generatedKeywords];
+      history.push(`/jobs/${generatedKeywords}`);
+      return;
     }
 
     const newJobs = await getJobs(generatedKeywords);
     setJobs({ ...jobs, [generatedKeywords]: newJobs });
+    setIsLoading(false);
+    history.push(`/jobs/${generatedKeywords}`);
   };
 
   return (
