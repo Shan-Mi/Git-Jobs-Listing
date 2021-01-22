@@ -23,7 +23,6 @@ describe("Test for JobDetail component", () => {
 
   it("should contain text 'Origin Link' with correct url for this job", () => {
     // find correct node by expected content;
-    // then check if it is an a-element;
     // then check if it has the correct href;
     // the result has two children, we need the first one - a-tag
     expect(
@@ -31,6 +30,7 @@ describe("Test for JobDetail component", () => {
         .at(0)
         .prop("href")
     ).toEqual(JOB_OBJECT.url);
+
   });
 
   it(`'company_url' should be wrapped in an a-tag`, () => {
