@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const JobListItem = ({ url, job, index }) => {
   return (
     <Link to={`${url}/${job.id}`} key={job.id}>
-      - {index}: {job.title}
+      - {index + 1}: {job.title}
     </Link>
   );
 };
