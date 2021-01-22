@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-const TitleWrapper = styled.h1`
+const TitleWrapper = styled.div`
   text-align: center;
-  position: relative;
-  top: 5rem;
+  padding-top: 5rem;
 `;
 
 const Header = () => {
   return (
-    <div>
-      <TitleWrapper>Welcome to GitHub Job Listing!</TitleWrapper>
-    </div>
+    <TitleWrapper>
+      <h1>Welcome to GitHub Job Listing!</h1>
+    </TitleWrapper>
   );
 };
 
