@@ -7,6 +7,14 @@ import EatLoading from "react-loadingg/lib/EatLoading";
 import { NO_JOBS_FOUND } from "../Constants/variables";
 import { generateKeywords } from "../utilis/helper";
 import SearchingForm from "../Components/SearchingForm";
+import { BtnSmall } from "../Styles/ButtonWrapper";
+import styled from "styled-components";
+
+const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 2.5rem;
+`;
 
 const FrontPage = () => {
   const descRef = useRef();
@@ -43,13 +51,18 @@ const FrontPage = () => {
     }
   };
 
+  const removeKey = () => {
+    localStorage.removeItem("jobs");
+  };
+
   return (
-    <div>
+    <FlexWrapper>
+      <BtnSmall onClick={removeKey}>Delete 'jobs' from localStorage</BtnSmall>
       {!isLoading && (
         <SearchingForm handleSubmit={handleSubmit} descRef={descRef} />
       )}
       {isLoading && <EatLoading />}
-    </div>
+    </FlexWrapper>
   );
 };
 
