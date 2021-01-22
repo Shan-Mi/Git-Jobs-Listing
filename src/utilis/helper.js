@@ -6,4 +6,3 @@ export const generateKeywords = (val) => {
   const regex = /\s+/;
   return val.trim().split(regex).join("+");
 };
-// TODO: store search result in localstorage
