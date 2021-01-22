@@ -5,7 +5,6 @@ import { UserContext } from "../context/GlobalContext";
 import { getOneJob } from "../utilis/helper";
 import styled from "styled-components";
 import { BtnSmall } from "../Styles/ButtonWrapper";
-import { fetchData } from "../Api";
 
 const Title = styled.h1`
   text-transform: uppercase;
@@ -32,8 +31,6 @@ const JobDetailPage = () => {
   // both way work
   // const [, , jobtitle, id] = history.location.pathname.split("/");
   const [job] = getOneJob(jobtitle, id, jobs);
-  const jobId = history.location.pathname.split("/")[3];
-  const fetchedJob = fetchData("id", jobId);
 
   return (
     <>
