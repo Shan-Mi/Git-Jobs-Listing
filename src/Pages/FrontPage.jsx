@@ -15,24 +15,28 @@ const FrontPage = () => {
   const history = useHistory();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    const originalKeywords = descRef.current.value;
-    const generatedKeywords = generateKeywords(originalKeywords);
+    try {
+      e.preventDefault();
+      setIsLoading(true);
+      const originalKeywords = descRef.current.value;
+      const generatedKeywords = generateKeywords(originalKeywords);
 
-    if (Object.keys(jobs).includes(generatedKeywords)) {
+      if (Object.keys(jobs).includes(generatedKeywords)) {
+        history.push(`/jobs/${generatedKeywords}`);
+        return;
+      }
+
+      const newJobs = await getJobs(generatedKeywords);
+      if (newJobs === NO_JOBS_FOUND) {
+        history.push("/nojobfound");
+        return;
+      }
+      setJobs({ ...jobs, [generatedKeywords]: newJobs });
+      setIsLoading(false);
       history.push(`/jobs/${generatedKeywords}`);
-      return;
+    } catch (err) {
+      console.error(err);
     }
-
-    const newJobs = await getJobs(generatedKeywords);
-    if (newJobs === NO_JOBS_FOUND) {
-      history.push("/nojobfound");
-      return;
-    }
-    setJobs({ ...jobs, [generatedKeywords]: newJobs });
-    setIsLoading(false);
-    history.push(`/jobs/${generatedKeywords}`);
   };
 
   return (
