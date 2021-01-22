@@ -144,3 +144,23 @@ In case the user accidentally inputs extra unnecessary space, this function is i
     });
     ```
     `.company-url` is used as test class (maybe should be changed to some more explicit testId), then we use `closest()` to check if this node with this `.company-url` class is wrapped within an a-element. If so, we will get back length === 1.
+
+# Code Snippet
+> For js, just change ts/tsx to js/jsx, awesome code for formatting and checking eslint errors.
+
+`npx prettier --write src/**/*.{ts,tsx}` 
+
+`npx eslint --fix src/**/*.{ts,tsx}`
+
+## Firebase
+```
+`firebase`
+`npm run build`
+`firebase deploy`
+```
+
+## Netlify
+```
+- `npm run build`
+- `netlify deploy --prod` -> `./build` or `build`
+```

@@ -30,7 +30,6 @@ describe("Test for JobDetail component", () => {
         .at(0)
         .prop("href")
     ).toEqual(JOB_OBJECT.url);
-
   });
 
   it(`'company_url' should be wrapped in an a-tag`, () => {
