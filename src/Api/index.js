@@ -1,7 +1,7 @@
 import axios from "axios";
 import { NO_JOBS_FOUND } from "../Constants/variables";
 
-const BASE_URL =
+export const BASE_URL =
   "https://us-central1-wands-2017.cloudfunctions.net/githubjobs?";
 
 export const fetchData = async (queryField, queryContent) => {

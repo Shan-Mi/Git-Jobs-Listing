@@ -25,8 +25,8 @@ describe("Test for JobListItem component", () => {
   });
 
   it("should render correct job title", () => {
-    expect(JobListItemWrapper.find(Link).text()).toBe(
-      `- : ${JOB_OBJECT.title}`
+    expect(JobListItemWrapper.find(Link).text()).toContain(
+      `${JOB_OBJECT.title}`
     );
   });
 });
