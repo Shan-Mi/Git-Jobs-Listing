@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const DetailWrapper = styled.div`
+const DetailWrapper = styled.main`
   margin: 3rem;
 `;
 
@@ -49,11 +49,11 @@ const JobDetail = ({ job }) => {
         <img src={company_logo} alt={company} />
       </FlexWrapper>
 
-      <div
+      <section
         className="description"
         dangerouslySetInnerHTML={createContent(description)}
       />
-      <div
+      <section
         className="how-to-apply"
         dangerouslySetInnerHTML={createContent(how_to_apply)}
       />

@@ -12,7 +12,7 @@ const Title = styled.h1`
   margin-right: 1rem;
 `;
 
-const TitleWrapper = styled.div`
+const TitleWrapper = styled.header`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,13 +31,13 @@ const JobDetailPage = () => {
   const [job] = getOneJob(jobtitle, id, jobs);
 
   return (
-    <div>
+    <>
       <TitleWrapper>
         <Title>Job Type: {jobtitle}</Title>
         <BtnSmall onClick={history.goBack}>Go back</BtnSmall>
       </TitleWrapper>
       <JobDetail job={job} />
-    </div>
+    </>
   );
 };
 

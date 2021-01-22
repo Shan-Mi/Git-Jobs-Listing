@@ -51,8 +51,8 @@ describe("Test for JobDetail component", () => {
     ).toBeTruthy();
   });
 
-  it("description should be wrapped in its own div", () => {
-    expect(JobWrapper.find(".description").closest("div")).toHaveLength(1);
+  it("description should be wrapped in its own section", () => {
+    expect(JobWrapper.find(".description").closest("section")).toHaveLength(1);
   });
 
   it("company logo should be wrapped in an img-tag", () => {
