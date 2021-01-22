@@ -16,3 +16,79 @@ export const JOB_OBJECT = {
   company_logo:
     "https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBZ1NXIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--65a93ab1c962ad69d2724d5791201cb0f2377646/whynow-login-logo.png",
 };
+export const JOBS_CONTEXT_MOCK = {
+  jobs: {
+    javascript: [
+      {
+        company: "Telmar",
+        company_logo:
+          "https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaUtXIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f27a4aea54de02611c954ffb0b13d0dbd333d4f/telmar-LiiVco-Logo-blue%20(2).png",
+        company_url: "http://Telmar",
+        created_at: "Thu Jan 21 15:20:37 UTC 2021",
+        description:
+          "<p>ROLE SUMMARY</p>\n<p>Reports To: Engineering Resource Manager\nRemote working and Flexible hours</p>\n<p>About Telmar:\nTelmar was purchased by LiiV in 2018  and is a provider of SaaS/software to advertising and media companies, providing the most influential agencies, media owners and planners with innovative cloud-based tools to help create, plan and predict the most successful media campaigns. With over 50 years of experience providing data and analytical tools for the marketing and advertisin...",
+        how_to_apply:
+          '<p>Please apply via the link below:\n<a href="https://liiv.bamboohr.com/jobs/view.php?id=55">https://liiv.bamboohr.com/jobs/view.php?id=55</a></p>\n',
+        id: "4c38e5a7-6ecd-478f-9571-4f83845c2833",
+        location: "UK remote",
+        title: "Full Stack Software Engineer - Fully Remote",
+        type: "Full Time",
+        url:
+          "https://jobs.github.com/positions/4c38e5a7-6ecd-478f-9571-4f83845c2833",
+      },
+      {
+        company: "Scanbot / doo GmbH",
+        company_logo:
+          "https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBamFXIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--15d5c042005a6092997a926e942b77f24bb2783c/scanbot-sdk-1567511514-logo.png",
+        company_url: "https://scanbot.io",
+        created_at: "Thu Jan 21 16:55:07 UTC 2021",
+        description:
+          "<p>Hi!</p>\n<p>We are Scanbot / doo GmbH! We are a German software development company founded in 2011, with business presences in Bonn and San Francisco. Scanbot enables the integration of scanning and data extraction functionalities into existing mobile applications for the insurance, healthcare, logistics, and banking industry. The Software Development Kit (SDK) utilizes highly sophisticated algorithms and machine learning to integrate scanning functionalities and data extraction into any app....",
+        how_to_apply:
+          '<p><a href="https://scanbot.join.com/jobs/1797665-qa-automation-engineer-m-f-d-for-our-location-in-bonn?pid=71fbd6149a82b0b128ee&amp;utm_source=stackoverflow&amp;utm_medium=paid&amp;utm_campaign=stackoverflow&amp;utm_content=qa%2Bautomation%2Bengineer%2Bm%2Bf%2Bd%2B-%2Bfor%2Bour%2Blocation%2Bin%2Bbonn">https://scanbot.join.com/jobs/1797665-qa-automation-engineer-m-f-d-for-our-location-in-bonn?pid=71fbd6149a82b0b128ee&amp;utm_source=stackoverflow&amp;utm_medium=paid&amp;utm_campaign=stackoverflow...',
+        id: "9ef799fa-5253-47bc-a101-82557c675e4d",
+        location: "Bonn",
+        title: "QA Automation Engineer (m/f/d)",
+        type: "Full Time",
+        url:
+          "https://jobs.github.com/positions/9ef799fa-5253-47bc-a101-82557c675e4d",
+      },
+    ],
+    "javascript+css": [
+      {
+        company: "Telmar",
+        company_logo:
+          "https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaUtXIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--9f27a4aea54de02611c954ffb0b13d0dbd333d4f/telmar-LiiVco-Logo-blue%20(2).png",
+        company_url: "http://Telmar",
+        created_at: "Thu Jan 21 15:20:37 UTC 2021",
+        description:
+          "<p>ROLE SUMMARY</p>\n<p>Reports To: Engineering Resource Manager\nRemote working and Flexible hours</p>\n<p>About Telmar:\nTelmar was purchased by LiiV in 2018  and is a provider of SaaS/software to advertising and media companies, providing the most influential agencies, media owners and planners with innovative cloud-based tools to help create, plan and predict the most successful media campaigns. With over 50 years of experience providing data and analytical tools for the marketing and advertisin...",
+        how_to_apply:
+          '<p>Please apply via the link below:\n<a href="https://liiv.bamboohr.com/jobs/view.php?id=55">https://liiv.bamboohr.com/jobs/view.php?id=55</a></p>\n',
+        id: "4c38e5a7-6ecd-478f-9571-4f83845c2833",
+        location: "UK remote",
+        title: "Full Stack Software Engineer - Fully Remote",
+        type: "Full Time",
+        url:
+          "https://jobs.github.com/positions/4c38e5a7-6ecd-478f-9571-4f83845c2833",
+      },
+      {
+        company: "Bounteous",
+        company_logo:
+          "https://jobs.github.com/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBaTZXIiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e9a514e66d4b3bed31e386e7ab5d040b2b2f1b99/Bounteous%20Logo.jpeg",
+        company_url: "https://www.bounteous.com/",
+        created_at: "Thu Jan 21 15:51:45 UTC 2021",
+        description:
+          "<p>We are actively looking for a Developer to join our Data Management team! This position will be responsible for helping deliver some of our most complex PIM projects.  You will be working with a team of talented developers, leads, and architects to tackle important problems and resolve complex issues for some of the best companies and most recognizable brands on the Internet. You will be working in a distributed environment and must be able to be proactive and reach out to co-workers and clie...",
+        how_to_apply:
+          '<p><a href="https://jobs.lever.co/bounteous/55432fdb-e57d-4288-ac9c-0c9693b7e648?lever-origin=applied&amp;lever-source%5B%5D=GitHub">https://jobs.lever.co/bounteous/55432fdb-e57d-4288-ac9c-0c9693b7e648?lever-origin=applied&amp;lever-source%5B%5D=GitHub</a></p>\n',
+        id: "6aa71001-c8e8-4c58-9bc6-72d05cb8ba99",
+        location: "All Locations",
+        title: "PIM Developer",
+        type: "Full Time",
+        url:
+          "https://jobs.github.com/positions/6aa71001-c8e8-4c58-9bc6-72d05cb8ba99",
+      },
+    ],
+  },
+};
