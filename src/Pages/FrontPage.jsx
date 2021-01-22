@@ -1,6 +1,6 @@
-import React, { useContext, useState, useRef } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-import { getJobs } from "../Api";
+import { fetchData } from "../Api";
 import WithHeader from "../Components/WithHeader";
 import { UserContext } from "../context/GlobalContext";
 import EatLoading from "react-loadingg/lib/EatLoading";
@@ -14,6 +14,10 @@ const FrontPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
+  useEffect(() => {
+    localStorage.setItem("jobs", JSON.stringify(jobs));
+  }, [jobs]);
+
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
@@ -26,7 +30,7 @@ const FrontPage = () => {
         return;
       }
 
-      const newJobs = await getJobs(generatedKeywords);
+      const newJobs = await fetchData("description", generatedKeywords);
       if (newJobs === NO_JOBS_FOUND) {
         history.push("/nojobfound");
         return;
