@@ -38,7 +38,9 @@ const JobsPage = (props) => {
   return (
     <>
       <TitleWrapper>
-        <h1>Job title as "{jobtitle}":</h1>
+        <h1>
+          {currentJobs.length} jobs as "{jobtitle}" are found:
+        </h1>
       </TitleWrapper>
       <GobackBtn onClick={history.goBack}>Go back</GobackBtn>
       <JobList currentJobs={currentJobs} url={url} />
