@@ -111,7 +111,7 @@ In case the user accidentally inputs extra unnecessary space, this function is i
     ```js
     export const generateKeywords = (val) => {
       const regex = /\s+/;
-      return val.trim().split(regex).join("+");
+      return val.trim().split(regex).sort().join("+");
     };
     ```
 
