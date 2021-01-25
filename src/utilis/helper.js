@@ -4,5 +4,5 @@ export const getOneJob = (jobtitle, id, jobs) =>
 
 export const generateKeywords = (val) => {
   const regex = /\s+/;
-  return val.trim().split(regex).join("+");
+  return val.trim().split(regex).sort().join("+");
 };

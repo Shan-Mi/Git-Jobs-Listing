@@ -33,7 +33,7 @@
 # Requirement
 
 1. First Page
-    - 1 inputs + 1 button: 
+    - 1 input + 1 button: 
 
       `description` | `Button`
 
@@ -82,7 +82,7 @@
   <BoxLoading />;
   ```
 
-# Features, good to know
+# Features, *good to know*
 1) Implement nested router
     ```js
     <Switch>
@@ -106,7 +106,7 @@
 
     Use `fetchData('queryField', 'queryContent')`, `createContent(contentField)` instead of `getJobs(description)`, to increase reusability.
 
-3. Preprocess input data
+3. Pre-process input data
 In case the user accidentally inputs extra unnecessary space, this function is implemented:
     ```js
     export const generateKeywords = (val) => {
@@ -115,7 +115,7 @@ In case the user accidentally inputs extra unnecessary space, this function is i
     };
     ```
 
-4. About test
+4. About **test**
   - Created 3 files, they are 2 files inside of `./src/Components/__test__` and `App.test.js`
   - `App.test.js` is used to check if app is correctly rendered (only 1 test)
   - `JobDetail.test.js` is for testing JobDetail component, which includes **10** tests.
@@ -126,7 +126,6 @@ In case the user accidentally inputs extra unnecessary space, this function is i
     ```js
     it("should contain text 'Origin Link' with correct url for this job", () => {
         // find correct node by expected content;
-        // then check if it is an a-element;
         // then check if it has the correct href;
         // the result has two children, we need the first one - a-tag
         expect(
