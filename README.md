@@ -108,6 +108,8 @@
 
 3. Pre-process input data
 In case the user accidentally inputs extra unnecessary space, this function is implemented:
+
+*Now added sort to generated array to avoid multiple fetching same piece of data from API.*
     ```js
     export const generateKeywords = (val) => {
       const regex = /\s+/;
