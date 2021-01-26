@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { useHistory, useRouteMatch } from "react-router-dom";
 import JobList from "../Components/JobList";
 import { UserContext } from "../context/GlobalContext";
 import styled from "styled-components";
 import { BtnSmall } from "../Styles/ButtonWrapper";
+import { fetchData } from "../Api";
+import EatLoading from "react-loadingg/lib/EatLoading";
+import { NO_JOBS_FOUND } from "../Constants/variables";
 
 const TitleWrapper = styled.div`
   display: flex;
@@ -29,21 +32,49 @@ const GobackBtn = styled(BtnSmall)`
 `;
 
 const JobsPage = (props) => {
-  const { jobs } = useContext(UserContext);
-  const { jobtitle } = props.match.params;
-  const { url } = useRouteMatch();
+  const { jobs, setJobs } = useContext(UserContext);
   const history = useHistory();
-  const currentJobs = jobs[jobtitle];
+  const [, , jobtitle] = history.location.pathname.split("/");
+  const { url } = useRouteMatch();
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentJobs, setCurrentJobs] = useState([]);
+
+  useEffect(() => {
+    if (Object.keys(jobs).includes(jobtitle)) {
+      return setCurrentJobs(jobs[jobtitle]);
+    }
+
+    setIsLoading(true);
+    const fetchJobs = async () => {
+      try {
+        const newJobs = await fetchData("description", jobtitle);
+        setCurrentJobs(newJobs);
+        if (newJobs === NO_JOBS_FOUND) {
+          history.push("/nojobfound");
+          return;
+        }
+        setJobs({ [jobtitle]: currentJobs });
+        setIsLoading(false);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchJobs();
+  }, [currentJobs, jobs, jobtitle, setJobs, history]);
 
   return (
     <>
       <TitleWrapper>
         <h1>
-          {currentJobs.length} jobs as "{jobtitle}" are found:
+          {isLoading
+            ? "Counting..."
+            : `${currentJobs.length} jobs as "${jobtitle}"
+          have been found:`}
         </h1>
       </TitleWrapper>
       <GobackBtn onClick={history.goBack}>Go back</GobackBtn>
-      <JobList currentJobs={currentJobs} url={url} />
+      {isLoading && <EatLoading />}
+      {!isLoading && <JobList currentJobs={currentJobs} url={url} />}
     </>
   );
 };

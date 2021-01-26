@@ -6,6 +6,7 @@ import { getOneJob } from "../utilis/helper";
 import styled from "styled-components";
 import { BtnSmall } from "../Styles/ButtonWrapper";
 import { fetchData } from "../Api";
+import EatLoading from "react-loadingg/lib/EatLoading";
 
 const Title = styled.h1`
   text-transform: uppercase;
@@ -27,8 +28,7 @@ const TitleWrapper = styled.header`
 
 const JobDetailPage = () => {
   const { jobs } = useContext(UserContext);
-  // both way work
-  // const { jobtitle, id } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
   const [, , jobtitle, id] = history.location.pathname.split("/");
   const [job, setJob] = useState({});
@@ -36,7 +36,7 @@ const JobDetailPage = () => {
 
   const handleClick = () => {
     if (btnContent === "Go Back") {
-      return history.goBack;
+      return history.goBack();
     }
     return history.push("/");
   };
@@ -47,10 +47,12 @@ const JobDetailPage = () => {
       const [newJob] = getOneJob(jobtitle, id, jobs);
       return setJob(newJob);
     }
+    setIsLoading(true);
     const fetchJob = async () => {
       const newJob = await fetchData("id", id);
       setBtnContent("Go to Frontpage");
       setJob(newJob);
+      setIsLoading(false);
     };
     fetchJob();
   }, [id, jobs, jobtitle]);
@@ -61,7 +63,8 @@ const JobDetailPage = () => {
         <Title>Job Type: {jobtitle}</Title>
         <BtnSmall onClick={handleClick}>{btnContent}</BtnSmall>
       </TitleWrapper>
-      <JobDetail job={job} />
+      {isLoading && <EatLoading />}
+      {!isLoading && <JobDetail job={job} />}
     </>
   );
 };
